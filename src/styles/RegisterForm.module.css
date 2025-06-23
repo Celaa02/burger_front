@@ -1,0 +1,69 @@
+.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #5d2c02;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 93%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  background-color: #5d2c02;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #3e1e00;
+}
+
+.link {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  color: #5d2c02;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.homeIcon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #5d2c02;
+  transition: transform 0.2s ease;
+}
+
+.homeIcon:hover {
+  transform: scale(1.2);
+}

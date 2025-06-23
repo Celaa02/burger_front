@@ -1,0 +1,23 @@
+/* Aplica a toda la pantalla */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("public/fondo_burger.png"); /* Ruta relativa desde /public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Caja del formulario */
+.login-container {
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
