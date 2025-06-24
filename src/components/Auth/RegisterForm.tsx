@@ -78,7 +78,7 @@ const RegisterForm = () => {
       <input
         name="email"
         type="email"
-        placeholder="Correo electrónico"
+        placeholder="E-mail address"
         className={styles.input}
         value={form.email}
         onChange={handleChange}
@@ -86,7 +86,7 @@ const RegisterForm = () => {
       <input
         name="password"
         type="password"
-        placeholder="E-mail address"
+        placeholder="password"
         className={styles.input}
         value={form.password}
         onChange={handleChange}

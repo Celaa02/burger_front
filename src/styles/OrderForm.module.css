@@ -1,25 +1,23 @@
 .container {
   min-height: 100vh;
   padding: 2rem;
-  background-image: url("/images/fondo_burger.png");
+  background-image: url('/images/fondo_burger.png');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.95);
+  background: #fff;
   border-radius: 1rem;
-  padding: 2rem;
-  max-width: 700px;
+  padding: 0.75rem 2rem;
   width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-
-
 
 .title {
   font-size: 2rem;
@@ -43,19 +41,18 @@
 }
 
 .button {
-  background-color: #5d2c02;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
   width: 100%;
-  margin-top: 1rem;
+  background-color: #f5a623;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 2rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
-
 .button:hover {
-  background-color: #3e1e00;
+  background-color: #d48806;
 }
 
 .imageContainer {
@@ -71,3 +68,74 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   object-fit: cover;
 }
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5d2c02;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: #a14f0a;
+}
+
+.backIcon {
+  font-size: 1.2rem;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  background: #fdf4e3;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
+.option input:checked + span,
+.option input:checked {
+  accent-color: #d2691e; /* color cálido tipo burger */
+  font-weight: bold;
+}
+
+/* Para asegurar que el texto tenga efecto visual */
+.option input[type="radio"],
+.option input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* Total destacado */
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  text-align: right;
+  color: #5d2c02;
+  background-color: #ffe7c2;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+

@@ -57,7 +57,7 @@ export default function Menu() {
           >
             <img src={burger.imageUrl} alt={burger.name} className={styles.image} />
             <h3 className={styles.name}>{burger.name}</h3>
-            <p>{burger.description}</p>
+            <p className={styles.description}>{burger.description}</p>
             <p className={styles.price}>${Number(burger.price).toFixed(2)}</p>
           </div>
         ))

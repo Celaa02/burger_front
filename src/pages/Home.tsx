@@ -11,10 +11,10 @@ export default function Home() {
         </p>
         <div className={styles.buttonGroup}>
           <Link to="/login" className={`${styles.button} ${styles.login}`}>
-            Iniciar Sesión
+            Login
           </Link>
           <Link to="/register" className={`${styles.button} ${styles.register}`}>
-            Registrarse
+            Sing Up
           </Link>
         </div>
       </div>

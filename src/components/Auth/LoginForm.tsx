@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../styles/LoginForm.module.css";
-import { loginUser } from "../../services/auth";
+import { loginUser } from '../../services/auth';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const LoginForm = () => {
     
 
     if (!email || !password) {
-      setError("Email y contraseña son obligatorios.");
+      setError("Email and password are required.");
       return;
     }
 
@@ -28,7 +28,7 @@ const LoginForm = () => {
 
       console.log("🚀 ~ handleSubmit ~ result:", result)
       if (!result?.access_token) {
-        throw new Error("Respuesta inválida del servidor.");
+        throw new Error("Invalid server response.");
       }
 
       // Guardar token y usuario en localStorage
@@ -38,7 +38,7 @@ const LoginForm = () => {
       // Redirigir al menú
       navigate("/menu");
     } catch (err: any) {
-      setError(err.message || "Error al iniciar sesión.");
+      setError(err.message || "Error logging in.");
     }
   };
 
@@ -51,21 +51,21 @@ const LoginForm = () => {
 
       <input
         type="email"
-        placeholder="Correo electrónico"
+        placeholder="E-mail address"
         className={styles.input}
       />
       <input
         type="password"
-        placeholder="Contraseña"
+        placeholder="Password"
         className={styles.input}
       />
 
       <button type="submit" className={styles.button}>
-        Iniciar Sesión
+        login
       </button>
 
       <Link to="/register" className={styles.link}>
-        ¿No tienes cuenta? Regístrate
+        Don't have an account? Register
       </Link>
     </form>
   );

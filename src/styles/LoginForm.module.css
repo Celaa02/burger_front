@@ -1,5 +1,5 @@
 .container {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.75);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -22,7 +22,7 @@
 .formBox {
   position: relative;
   z-index: 1;
-  background-color: white;
+  background-color: rgb(200, 154, 96);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -41,31 +41,24 @@
   width: 93%;
   padding: 0.75rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid lab(66.67% 14.31 42.71);
   border-radius: 0.5rem;
   font-size: 1rem;
 }
 
 .button {
-  background-color: #5d2c02;
-  color: white;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
+  width: 100%;
+  background-color: #f5a623;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  padding: 0.75rem 2rem;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  
-  /* 🔽 Ajustes nuevos */
-  display: block;
-  margin: 1rem auto 0 auto;
-  width: auto;
-  min-width: 150px;
+  transition: background-color 0.2s;
 }
-
-
 .button:hover {
-  background-color: #3e1e00;
+  background-color: #d48806;
 }
 
 .link {

@@ -47,6 +47,7 @@
 
 .description {
   font-size: 1.1rem;
+  font-style: italic;
   color: #444;
   margin-bottom: 2rem;
 }
@@ -58,16 +59,23 @@
 }
 
 .button {
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  width: 100%;
+  background-color: #f5a623;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 2rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.button:hover {
+  background-color: #d48806;
 }
 
 .login {
-  background-color: #78350f;
-  color: white;
+  border: 2px solid #78350f;
+  color: #78350f;
 }
 
 .login:hover {
@@ -90,9 +98,11 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #5d2c02;
-  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .icons {

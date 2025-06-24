@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import styles from "../../styles/OrderForm.module.css";
+import { FiArrowLeft } from "react-icons/fi";
+
 
 interface Burger {
     id: number;
@@ -11,33 +13,33 @@ interface Burger {
 }
 
 const extrasList = [
-    { name: "Huevo frito", price: 1.0 },
-    { name: "Jalapeños", price: 0.5 },
-    { name: "Guacamole", price: 1.5 },
-    { name: "Piña caramelizada", price: 0.75 },
-    { name: "Extra queso", price: 0.8 },
+    { name: "Huevo frito 🍳", price: 1.0 },
+    { name: "Jalapeños 🌶️", price: 0.5 },
+    { name: "Guacamole 🥑", price: 1.5 },
+    { name: "Piña caramelizada 🍍", price: 0.75 },
+    { name: "Extra queso 🧀", price: 0.8 },
 ];
 
 const salsasList = [
-    { name: "Kétchup", price: 0 },
-    { name: "Mayonesa", price: 0 },
-    { name: "Mostaza Dijón", price: 0 },
-    { name: "Salsa BBQ ahumada", price: 0.6 },
-    { name: "Mayonesa picante", price: 0.6 },
+    { name: "Kétchup 🍅", price: 0 },
+    { name: "Mayonesa 🥚", price: 0 },
+    { name: "Mostaza Dijón 🟡", price: 0 },
+    { name: "Salsa BBQ ahumada 🍖", price: 0.6 },
+    { name: "Mayonesa picante 🌶️", price: 0.6 },
 ];
 
 const sidesList = [
-    { name: "Papas Fritas Corte Casero", price: 2.75 },
-    { name: "Papas en Cascos con Piel", price: 3.25 },
-    { name: "Batatas Fritas", price: 3.5 },
+    { name: "Papas Fritas Corte Casero 🍟", price: 2.75 },
+    { name: "Papas en Cascos con Piel 🥔", price: 3.25 },
+    { name: "Batatas Fritas 🍠", price: 3.5 },
 ];
 
 const drinksList = [
-    { name: "Limonada Natural", price: 2.25 },
-    { name: "Gaseosa", price: 2.0 },
-    { name: "Té Helado", price: 2.0 },
-    { name: "Agua Embotellada", price: 1.5 },
-    { name: "Cerveza Artesanal sin alcohol", price: 4.0 },
+    { name: "Limonada Natural 🍋", price: 2.25 },
+    { name: "Gaseosa 🥤", price: 2.0 },
+    { name: "Té Helado 🍹", price: 2.0 },
+    { name: "Agua Embotellada 💧", price: 1.5 },
+    { name: "Cerveza Artesanal sin alcohol 🍺", price: 4.0 },
 ];
 
 export default function OrderForm() {
@@ -154,68 +156,84 @@ export default function OrderForm() {
                 </div>
                 {error && <p className={styles.error}>{error}</p>}
 
+                {/* Extras */}
                 <div className={styles.section}>
                     <h4>Extras (máximo 3)</h4>
-                    {extrasList.map((ex) => (
-                        <label key={ex.name} className={styles.option}>
-                            <input
-                                type="checkbox"
-                                checked={extras.includes(ex.name)}
-                                onChange={() => toggleExtra(ex.name)}
-                            />
-                            {ex.name} (${ex.price})
-                        </label>
-                    ))}
+                    <div className={styles.optionsGrid}>
+                        {extrasList.map((ex) => (
+                            <label key={ex.name} className={styles.option}>
+                                <input
+                                    type="checkbox"
+                                    checked={extras.includes(ex.name)}
+                                    onChange={() => toggleExtra(ex.name)}
+                                />
+                                {ex.name} (${ex.price})
+                            </label>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Salsas */}
                 <div className={styles.section}>
                     <h4>Salsas (máximo 2)</h4>
-                    {salsasList.map((s) => (
-                        <label key={s.name} className={styles.option}>
-                            <input
-                                type="checkbox"
-                                checked={salsas.includes(s.name)}
-                                onChange={() => toggleSalsa(s.name)}
-                            />
-                            {s.name} {s.price > 0 ? `($${s.price})` : "(Gratis)"}
-                        </label>
-                    ))}
+                    <div className={styles.optionsGrid}>
+                        {salsasList.map((s) => (
+                            <label key={s.name} className={styles.option}>
+                                <input
+                                    type="checkbox"
+                                    checked={salsas.includes(s.name)}
+                                    onChange={() => toggleSalsa(s.name)}
+                                />
+                                {s.name} {s.price > 0 ? `($${s.price})` : "(Gratis)"}
+                            </label>
+                        ))}
+                    </div>
                 </div>
+
 
                 {/* Acompañamiento */}
                 <div className={styles.section}>
                     <h4>Acompañamiento</h4>
-                    {sidesList.map((s) => (
-                        <label key={s.name} className={styles.option}>
-                            <input
-                                type="radio"
-                                name="side"
-                                checked={side === s.name}
-                                onChange={() => setSide(s.name)}
-                            />
-                            {s.name} (${s.price})
-                        </label>
-                    ))}
+                    <div className={styles.optionsGrid}>
+                        {sidesList.map((s) => (
+                            <label key={s.name} className={styles.option}>
+                                <input
+                                    type="radio"
+                                    name="side"
+                                    checked={side === s.name}
+                                    onChange={() => setSide(s.name)}
+                                />
+                                {s.name} (${s.price})
+                            </label>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Bebida */}
                 <div className={styles.section}>
                     <h4>Bebida</h4>
-                    {drinksList.map((d) => (
-                        <label key={d.name} className={styles.option}>
-                            <input
-                                type="radio"
-                                name="drink"
-                                checked={drink === d.name}
-                                onChange={() => setDrink(d.name)}
-                            />
-                            {d.name} (${d.price})
-                        </label>
-                    ))}
+                    <div className={styles.optionsGrid}>
+                        {drinksList.map((d) => (
+                            <label key={d.name} className={styles.option}>
+                                <input
+                                    type="radio"
+                                    name="drink"
+                                    checked={drink === d.name}
+                                    onChange={() => setDrink(d.name)}
+                                />
+                                {d.name} (${d.price})
+                            </label>
+                        ))}
+                    </div>
                 </div>
 
-                <p className={styles.total}>Total: ${calculateTotal().toFixed(2)}</p>
+                <p className={styles.total}> 🧾💰 Total: ${calculateTotal().toFixed(2)}</p>
+                <div style={{ textAlign: "left", marginTop: "1rem" }}>
+                    <Link to="/menu" className={styles.backLink}>
+                        <FiArrowLeft className={styles.backIcon} />
+                        Volver al menú
+                    </Link>
+                </div>
                 <button onClick={handleOrder} className={styles.button}>Confirmar Pedido</button>
             </div>
         </div>
