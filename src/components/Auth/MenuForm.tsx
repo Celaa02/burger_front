@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "../../styles/MenuForm.module.css";
+import { useNavigate } from "react-router-dom";
 
 interface Burger {
   id: number;
@@ -10,7 +11,9 @@ interface Burger {
 }
 
 export default function Menu() {
+  const navigate = useNavigate();
   const [burgers, setBurgers] = useState<Burger[]>([]);
+  console.log("🚀 ~ Menu ~ burgers:", burgers)
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -45,13 +48,20 @@ export default function Menu() {
 
       <div className={styles.grid}>
         {burgers.map((burger) => (
-          <div key={burger.id} className={styles.card}>
+          
+          <div
+            key={burger.id}
+            className={styles.card}
+            onClick={() => navigate(`/order/${burger.id}`)}
+            style={{ cursor: "pointer" }}
+          >
             <img src={burger.imageUrl} alt={burger.name} className={styles.image} />
             <h3 className={styles.name}>{burger.name}</h3>
             <p>{burger.description}</p>
             <p className={styles.price}>${Number(burger.price).toFixed(2)}</p>
           </div>
-        ))}
+        ))
+        }
       </div>
     </div>
   );

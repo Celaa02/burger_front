@@ -1,9 +1,7 @@
-/* Aplica a toda la pantalla */
 .container {
   width: 100vw;
   height: 100vh;
-  background-image: url("/images/fondo_burger.png"); /* Ruta relativa desde /public */
-  background-size: cover;
+  background-image: url("/images/fondo_burger.png");
   background-position: center;
   background-repeat: no-repeat;
 
@@ -12,7 +10,6 @@
   align-items: center;
 }
 
-/* Caja del formulario */
 .login-container {
   background-color: white;
   padding: 2rem 2.5rem;
