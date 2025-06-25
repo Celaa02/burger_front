@@ -27,7 +27,7 @@ export default function OrderHistory() {
             try {
                 const token = localStorage.getItem("token");
 
-                const res = await fetch("http://localhost:3001/orders", {
+                const res = await fetch("https://burger-backend-bbwb.onrender.com/orders", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

@@ -25,7 +25,7 @@ export default function Menu() {
     const fetchBurgers = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:3001/burgers", {
+        const res = await fetch("https://burger-backend-bbwb.onrender.com/burgers", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

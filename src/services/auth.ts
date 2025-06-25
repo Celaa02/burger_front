@@ -1,5 +1,5 @@
 // src/services/auth.ts
-const API_URL = "http://localhost:3001";
+const API_URL = "https://burger-backend-bbwb.onrender.com/";
 
 export const registerUser = async (data: {
   name: string;

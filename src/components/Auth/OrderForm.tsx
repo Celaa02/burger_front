@@ -53,7 +53,7 @@ export default function OrderForm() {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        fetch(`http://localhost:3001/burgers/${burgerId}`, {
+        fetch(`https://burger-backend-bbwb.onrender.com/burgers/${burgerId}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -136,7 +136,7 @@ export default function OrderForm() {
         };
         
         try {
-            const res = await fetch("http://localhost:3001/orders", {
+            const res = await fetch("https://burger-backend-bbwb.onrender.com/orders", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
