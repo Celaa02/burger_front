@@ -1,0 +1,54 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  background-image: url('/images/fondo_burger.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #5d2c02;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+.message {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h4 {
+  color: #5d2c02;
+  margin-bottom: 0.5rem;
+}
+
+.item {
+  margin-top: 1rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #5d2c02;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}

@@ -53,8 +53,6 @@ export default function OrderForm() {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        console.log("🍔 ID recibido:", burgerId);
-        // Simulando fetch de la hamburguesa seleccionada
         fetch(`http://localhost:3001/burgers/${burgerId}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -115,15 +113,15 @@ export default function OrderForm() {
         const total = Number(calculateTotal().toFixed(0));
         const price = total;
         const userData = localStorage.getItem("user");
-        console.log("🚀 ~ handleOrder ~ userData:", userData)
+        const userDataEmail = localStorage.getItem("email");
         if (!userData) {
         setError("No se encontró información del usuario. Por favor vuelve a iniciar sesión.");
         return;
         }
-        console.log("🚀 ~ handleOrder ~ email:", userData)
 
         const payload = {
-            email: userData,
+            user_id: Number(userData),
+            email: userDataEmail,
             total,
             items: [
                 {
@@ -137,9 +135,6 @@ export default function OrderForm() {
             ],
         };
         
-        console.log("🚀 ~ handleOrder ~  payload :",  payload )
-
-
         try {
             const res = await fetch("http://localhost:3001/orders", {
                 method: "POST",
@@ -245,7 +240,7 @@ export default function OrderForm() {
                 <div style={{ textAlign: "left", marginTop: "1rem" }}>
                     <Link to="/menu" className={styles.backLink}>
                         <FiArrowLeft className={styles.backIcon} />
-                        Volver al menú
+                        🍔🍟 Volver al menú
                     </Link>
                 </div>
                 <button onClick={handleOrder} className={styles.button}>Confirmar Pedido</button>

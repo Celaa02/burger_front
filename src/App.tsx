@@ -6,6 +6,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import MenuUser from "./pages/Menu";
 import Order from "./pages/Order";
 import OrderSuccess from "./pages/OrderSucess";
+import OrderHistory from "./pages/OrderHistory";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         />
         <Route path="/order/:id" element={<Order />} />
         <Route path="/order-success" element={<OrderSuccess />} />
+        <Route path="/orders/history" element={<OrderHistory />} />
       </Routes>
     </Router>
   );

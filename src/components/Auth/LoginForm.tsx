@@ -12,9 +12,7 @@ const LoginForm = () => {
     setError("");
 
     const form = e.target as HTMLFormElement;
-    console.log("🚀 ~ handleSubmit ~ form:", (form[2] as HTMLInputElement).value)
     const email = (form[0] as HTMLInputElement).value.trim();
-    console.log("🚀 ~ handleSubmit ~ email:", email)
     const password = (form[1] as HTMLInputElement).value;
     const access_token = (form[2] as HTMLInputElement).value;
     
@@ -27,20 +25,15 @@ const LoginForm = () => {
     try {
       const result = await loginUser({ email, password, access_token});
 
-      console.log("🚀 ~ handleSubmit ~ result:", result)
       if (result.access_token && result.email) {
           localStorage.setItem("token", result.access_token);
-          localStorage.setItem("user", result.email);
+          localStorage.setItem("email", result.email);
+          localStorage.setItem("user", result.id);
           navigate("/menu");
         } else {
           setError("Credenciales inválidas");
         }
 
-      // Guardar token y usuario en localStorage
-      localStorage.setItem("token", result.access_token);
-      localStorage.setItem("user", result.email);
-
-      // Redirigir al menú
       navigate("/menu");
     } catch (err: any) {
       setError(err.message || "Error logging in.");
