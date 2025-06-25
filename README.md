@@ -5,12 +5,6 @@ Interfaz web de la aplicación **Burger Station**, desarrollada con React + Vite
 ---
 
 ## 🚀 Tecnologías usadas
-
-- **React + Vite**
-- **TypeScript**
-- **React Router DOM**
-- **CSS Modules**
-- **React Icons**
 - [React + Vite](https://React.com/) - Framework principal
 - [TypeScript](https://typescriptlang.org//) - Lenguaje de programacion
 - [React Router DOM](https://reactrouter.com//) - Declaracion de rutas para react
