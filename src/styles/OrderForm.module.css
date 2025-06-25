@@ -10,7 +10,7 @@
 }
 
 .card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 1rem;
   padding: 0.75rem 2rem;
   width: 100%;
@@ -102,13 +102,13 @@
   gap: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  background: #fdf4e3;
+  background: #ffe7c2;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
 
 .option:hover {
-  background-color: #f0f0f0;
+  background-color: #d2691e;
 }
 
 .option input:checked + span,

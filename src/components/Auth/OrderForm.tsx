@@ -112,9 +112,19 @@ export default function OrderForm() {
             return;
         }
 
+        const total = Number(calculateTotal().toFixed(0));
+        const price = total;
+        const userData = localStorage.getItem("user");
+        console.log("🚀 ~ handleOrder ~ userData:", userData)
+        if (!userData) {
+        setError("No se encontró información del usuario. Por favor vuelve a iniciar sesión.");
+        return;
+        }
+        console.log("🚀 ~ handleOrder ~ email:", userData)
+
         const payload = {
-            email: JSON.parse(localStorage.getItem("user") || '{}').email,
-            total: calculateTotal(),
+            email: userData,
+            total,
             items: [
                 {
                     burgerId: burger.id,
@@ -122,10 +132,13 @@ export default function OrderForm() {
                     drink,
                     extras,
                     salsas,
-                    price: calculateTotal(),
+                    price,
                 },
             ],
         };
+        
+        console.log("🚀 ~ handleOrder ~  payload :",  payload )
+
 
         try {
             const res = await fetch("http://localhost:3001/orders", {
@@ -138,12 +151,13 @@ export default function OrderForm() {
             });
 
             if (!res.ok) throw new Error("Error al realizar el pedido");
-            alert("Pedido realizado con éxito!");
-            navigate("/");
+
+            navigate("/order-success");
         } catch (err: any) {
-            setError(err.message);
+            setError(err.message || "Error inesperado");
         }
     };
+
 
     if (!burger) return <p>Cargando...</p>;
 

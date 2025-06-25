@@ -20,6 +20,9 @@ export default function Menu() {
     const fetchBurgers = async () => {
       try {
         const token = localStorage.getItem("token");
+        const user = localStorage.getItem("user");
+        console.log("🚀 ~ fetchBurgers ~ user:", user)
+        console.log("🚀 ~ fetchBurgers ~ token:", token)
         const res = await fetch("http://localhost:3001/burgers", {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import MenuUser from "./pages/Menu";
 import Order from "./pages/Order";
+import OrderSuccess from "./pages/OrderSucess";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           }
         />
         <Route path="/order/:id" element={<Order />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
     </Router>
   );
